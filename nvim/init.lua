@@ -1,0 +1,2 @@
+require("jimit");
+print("Hello");
