@@ -1,2 +1,2 @@
 require("jimit.remap");
-print("Hello from jimit");
+require("jimit.set");
