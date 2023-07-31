@@ -10,3 +10,5 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", "\"+y")
+
+vim.keymap.set("n", "<C-`>", vim.cmd.term)
