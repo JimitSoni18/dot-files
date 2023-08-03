@@ -56,4 +56,5 @@ use "olimorris/onedarkpro.nvim"
 use ("theprimeagen/harpoon")
 use ("mbbill/undotree")
 use ("tpope/vim-fugitive")
+use ("jiangmiao/auto-pairs")
 end)
