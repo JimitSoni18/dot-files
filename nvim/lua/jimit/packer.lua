@@ -56,5 +56,9 @@ use "olimorris/onedarkpro.nvim"
 use ("theprimeagen/harpoon")
 use ("mbbill/undotree")
 use ("tpope/vim-fugitive")
+use {
+	"windwp/nvim-autopairs",
+	config = function() require("nvim-autopairs").setup {} end
+}
 -- use ("jiangmiao/auto-pairs")
 end)

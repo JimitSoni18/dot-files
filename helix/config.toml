@@ -10,3 +10,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[[language]]
+name = "rust"
+auto-format = true

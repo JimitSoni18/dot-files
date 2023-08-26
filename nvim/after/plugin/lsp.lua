@@ -22,6 +22,9 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 require("mason").setup()
 require("mason-lspconfig").setup {
 	ensure_installed = {
+		"html",
+		"emmet_ls",
+		"cssmodules_ls",
 		"tsserver",
 		"eslint",
 		"lua_ls",

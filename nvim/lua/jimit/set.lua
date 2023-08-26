@@ -3,9 +3,8 @@ vim.opt.relativenumber = true
 
 vim.opt.autoindent = false
 vim.opt.smartindent = true
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.expandtab = false
+vim.opt.softtabstop = 0
 
 vim.opt.wrap = true
 
