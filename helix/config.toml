@@ -11,6 +11,7 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[[language]]
-name = "rust"
-auto-format = true
+[keys.normal]
+i = ["collapse_selection", "insert_mode"]
+a = ["collapse_selection", "append_mode"]
+D = ["collapse_selection", "kill_to_line_end"]

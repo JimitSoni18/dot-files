@@ -60,5 +60,7 @@ use {
 	"windwp/nvim-autopairs",
 	config = function() require("nvim-autopairs").setup {} end
 }
+use ("elkowar/yuck.vim")
+use ("eraserhd/parinfer-rust")
 -- use ("jiangmiao/auto-pairs")
 end)
