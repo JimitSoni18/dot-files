@@ -4,8 +4,19 @@ scope = "source.rust"
 injection-regex = "rust"
 file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
-auto-format = true
+auto-format = false
 comment-token = "//"
 language-server = { command = "rust-analyzer" }
-indent = { tab-width = 4, unit = "	" }
+indent = { tab-width = 4, unit = " " }
 
+[[language]]
+name = "html"
+file-types = ["html", "htm"]
+comment-token = "<!-- -->"
+language-server = { command = "vscode-html-languageserver", args = ["--stdio"] }
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "markdown"
+file-types = ["md"]
+language-server = { command = "marksman" }

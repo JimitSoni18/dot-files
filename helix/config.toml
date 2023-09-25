@@ -1,17 +1,63 @@
-theme = "onedark"
+theme = "onedark_fix"
 
 [editor]
 line-number = "relative"
+rulers = [80]
+text-width = 80
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+
 [editor.file-picker]
 hidden = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+
+[editor.statusline]
+left = ["file-modification-indicator", "mode", "spinner", "file-base-name"]
+center = ["file-name"]
+right = [
+  "diagnostics",
+  "selections",
+  "spacer",
+  "version-control",
+  "spacer",
+  "file-type"
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-inlay-hints = true
 
 [keys.normal]
 i = ["collapse_selection", "insert_mode"]
 a = ["collapse_selection", "append_mode"]
 D = ["collapse_selection", "kill_to_line_end"]
+G = ["goto_last_line"]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
+[keys.select]
+i = ["collapse_selection", "insert_mode"]
+a = ["collapse_selection", "append_mode"]
+D = ["collapse_selection", "kill_to_line_end"]
+G = ["goto_last_line"]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"

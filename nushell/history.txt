@@ -1,1 +1,331 @@
 clear
+hx /home/jimit/.config/nushell/env.nu
+hx
+helix /home/jimit/.config/nushell/env.nu
+clear
+helix /home/jimit/.config/nushell/env.nu
+hx
+clear
+pacman -R helix
+yay -R helix
+sudo pacman -R helix
+yay -S helix
+paru -S helix
+pacman -S helix
+sudo pacman -S helix
+paru -S helix
+sudo pacman -S helix
+hx
+helix /home/jimit/.config/nushell/env.nu
+clear
+time bash
+clear
+ls
+cd Programming/Languages/Rust/
+ls
+cd async_await/
+clear
+hx .
+helix .
+clear
+hyprpicker
+yay -R hyprpicker
+paru -R hyprpicker
+paru -R hyprpicker-git
+paru -S hyprpicker-git
+hyprpicker
+cd ~/.config/
+cd helix/
+hx .
+helix .
+ls
+ls -la
+mkdir themes
+cd themes
+hx .
+helix .
+hyprpicker 
+helix onedark_fix.toml
+cd ~/.config/helix/
+hx .
+helix /
+hx .
+helix .
+echo $TERM
+echo $env.TERM
+echo $env.PWD
+echo PWD
+echo $PWD
+helix .
+cd Programming/Languages/Rust/
+helix .
+cd async_await/
+hx .
+helix .
+zellij 
+helix .
+clear
+zellij 
+clear
+zellij list-sessions
+clear
+zellij list-sessions
+cd ~/.config/
+ls
+mkdir wezterm
+cd wezterm/
+helix wezterm.lua
+clear
+zellij 
+helix .config/wezterm/wezterm.lua
+cd Programming/Languages/Rust/async_await/
+cd ~/.config/helix/
+hx .
+helix /
+helix .
+cargo check
+helix .
+clear
+cd src/
+ls
+touch lib.rs
+cd .
+cd ..
+helix .
+cd ~/.config/wezterm/
+helix .
+clear
+compgen
+clear
+fzf
+compgen
+htop
+clear
+zellij 
+bash
+compgen
+clear
+sudo pacman -Syu
+paru
+repo
+clear
+which hx
+clear
+cd Programming/Languages/Rust/async_await/
+hx .
+helix .
+clear
+hx .
+cd ~/.config/helix/
+hx .
+helix .
+helix .
+zellij 
+cd ~/.config/helix/
+cd Programming/Languages/Rust/async_await/
+helix .
+helix .
+cd ~/.config/helix/
+helix .
+cd Programming/Languages/Rust/
+cargo new --lib timer_future
+cd timer_future/
+hx .
+clear
+cd ..
+ls
+cd Projects/
+ls
+helix .
+git clone https://github.com/JimitSoni18/helix.git
+cd helix/
+cd ~/.config/helix/
+helix .
+helix .
+rustc -v
+rustc
+clear
+rustc --version
+ls
+cd ..
+rustc --version
+cd helix/
+rustup component add rust-analyzer
+which rust-analyzer
+rust-analyzer --version
+cd ..
+rust-analyzer --version
+cd helix/
+helix .
+cargo check
+killall rust-analyzer
+killall rustc
+killall cargo
+helix .
+which rust-analyzer
+rust-analyzer --version
+rustup component removerust-analyzer
+rustup component remove rust-analyzer
+rustup component add rust-analyzer
+helix .
+rust-analyzer 
+cargo c
+clear
+helix .
+killall rust-analyzer
+helix .
+helix .
+cd ~/Programming/Projects/helix/
+clear
+cd .librewolf/xt99uing.default-default/
+ls
+cd chrome/
+ls
+hxx
+helix /
+helix .
+cd ..
+ls
+cp -r chrome ../uiq1c6r6.default/
+cd ../uiq1c6r6.default/
+ls
+cd chrome/
+la
+ls
+cd ..
+cd ../..
+clear
+sudo pacman -S git-delta
+cd Programming/Languages/Rust/async_await/
+git difftool --tool-help
+delta
+cd ~
+helix .gitconfig
+cd Programming/Languages/Rust/async_await/
+ls
+git diff
+git add .
+git diff
+git diff --staged
+clear
+delta
+git difftool --tool-help
+helix ~/.gitconfig
+git diff
+git diff --staged
+clea
+clear
+git show
+htop
+clear
+cd ../../../Projects/ 
+cd helix/
+clear
+helix /
+helix .
+cd ~
+mkdir gate_prep
+cd gate_prep/
+helix subjects
+ls
+clear
+helix subjects.md
+helix --health markdown
+cd ~/Documents/
+ls
+./marksman-linux-x64
+mv marksman-linux-x64q marksman
+ls
+mv marksman-linux-x64 marksman
+ls
+mv marksman /usr/bin
+cd /usr/bin
+ls 
+cd ~/Documents/
+ls
+markdown_py 
+clear
+mv marksman /usr/bin/
+sudo mv marksman /usr/bin/
+marksman
+clear
+cd ~
+marks
+marksman
+chmod +x /usr/bin/marksman
+marksman
+clear
+cd .config/helix/
+hx .
+helix .
+cargo component add rustfmt
+rustup component add rustfmt
+hx .
+helix .
+cd ~/gate_prep/
+hx .
+sudo pacman -S wofi
+cd ~
+clear
+wofi
+wofi -d
+wofi -S
+wofi -S drun
+cd .config/hypr/
+ls
+helix hyprpaper.conf
+helix hyprland.conf
+clear
+gvfs-mtp
+clear
+pacman -Q
+sudo pacman -S gvfs-mtp
+clear
+pacman -Q
+clear
+lsusb
+gio
+clear
+cd .config/
+git status
+ls Kitware/
+cat Kitware/CMakeSetup.conf
+git status
+git add JetBrainsMono-2.304 eww wezterm helix
+git status
+git add dconf/user hypr nushell xfce4
+git statui
+git status
+git add nushell
+git status
+git add nushell/history.txtq
+git add nushell/history.txt
+git status
+git add .
+git status
+git restore Kitware/
+git status
+cd nushell/
+ls
+cat history.txt
+clear
+git status
+git restore Kitware/
+git status
+git restore Kitware/*
+git status
+git restore --staged Kitware/
+git restore --staged Kitware
+git restore --staged Kitware/*
+git restore --staged .Kitware/*
+git status
+ls
+cd ..
+git restore --staged .Kitware/*
+git status
+git restore --staged .Kitware/
+git restore --staged Kitware/
+git status
+git restore --staged nushell/history.txt
+git status
+clear
