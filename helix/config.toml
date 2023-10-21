@@ -4,6 +4,7 @@ theme = "onedark_fix"
 line-number = "relative"
 rulers = [80]
 text-width = 80
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,7 +13,6 @@ select = "underline"
 
 [editor.soft-wrap]
 enable = true
-# wrap-at-text-width = true
 
 [editor.file-picker]
 hidden = false

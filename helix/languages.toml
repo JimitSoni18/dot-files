@@ -8,6 +8,47 @@ auto-format = false
 comment-token = "//"
 language-server = { command = "rust-analyzer" }
 indent = { tab-width = 4, unit = " " }
+formatter = { command = "cargo fmt" }
+
+[[language]]
+name = "javascript"
+injection-regex = "html"
+file-types = ["js"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "typescript-language-server" }
+indent = { tab-width = 4, unit = "\t" }
+formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+
+[[language]]
+name = "typescript"
+injection-regex = "html"
+file-types = ["ts"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "typescript-language-server" }
+indent = { tab-width = 4, unit = "\t" }
+formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+
+[[language]]
+name = "jsx"
+injection-regex = "html"
+file-types = ["jsx"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "typescript-language-server" }
+indent = { tab-width = 4, unit = "\t" }
+formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+
+[[language]]
+name = "javascript"
+injection-regex = "html"
+file-types = ["ts"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "typescript-language-server" }
+indent = { tab-width = 4, unit = "\t" }
+formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 
 [[language]]
 name = "html"

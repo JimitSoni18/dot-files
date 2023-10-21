@@ -9,6 +9,6 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.color_scheme = 'One Dark (Gogh)'
+config.color_scheme = 'Bespin (base16)'
 
 return config
