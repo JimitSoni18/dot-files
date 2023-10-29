@@ -1,10 +1,11 @@
-theme = "onedark_fix"
+theme = "onedark"
 
 [editor]
 line-number = "relative"
 rulers = [80]
 text-width = 80
 bufferline = "always"
+idle-timeout = 40
 
 [editor.cursor-shape]
 insert = "bar"

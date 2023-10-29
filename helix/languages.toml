@@ -1,13 +1,28 @@
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+args = []
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-html-languageserver]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.marksman]
+command = "marksman"
+
 [[language]]
 name = "rust"
 scope = "source.rust"
 injection-regex = "rust"
 file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
-auto-format = false
+auto-format = true
 comment-token = "//"
-language-server = { command = "rust-analyzer" }
-indent = { tab-width = 4, unit = " " }
+language-servers = [ "rust-analyzer" ]
+indent = { tab-width = 4, unit = "    " }
 formatter = { command = "cargo fmt" }
 
 [[language]]
@@ -16,7 +31,7 @@ injection-regex = "html"
 file-types = ["js"]
 auto-format = true
 comment-token = "//"
-language-server = { command = "typescript-language-server" }
+language-servers = [ "typescript-language-server" ]
 indent = { tab-width = 4, unit = "\t" }
 formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 
@@ -26,7 +41,7 @@ injection-regex = "html"
 file-types = ["ts"]
 auto-format = true
 comment-token = "//"
-language-server = { command = "typescript-language-server" }
+language-servers = [ "typescript-language-server" ]
 indent = { tab-width = 4, unit = "\t" }
 formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 
@@ -36,17 +51,17 @@ injection-regex = "html"
 file-types = ["jsx"]
 auto-format = true
 comment-token = "//"
-language-server = { command = "typescript-language-server" }
+language-servers = [ "typescript-language-server" ]
 indent = { tab-width = 4, unit = "\t" }
 formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 
 [[language]]
-name = "javascript"
+name = "tsx"
 injection-regex = "html"
 file-types = ["ts"]
 auto-format = true
 comment-token = "//"
-language-server = { command = "typescript-language-server" }
+language-servers = [ "typescript-language-server" ]
 indent = { tab-width = 4, unit = "\t" }
 formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 
@@ -54,10 +69,11 @@ formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
 name = "html"
 file-types = ["html", "htm"]
 comment-token = "<!-- -->"
-language-server = { command = "vscode-html-languageserver", args = ["--stdio"] }
+language-servers = [ "vscode-html-languageserver" ]
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
 name = "markdown"
 file-types = ["md"]
-language-server = { command = "marksman" }
+language-servers = [ "marksman" ]
+indent = { tab-width = 4, unit = "\t" }
