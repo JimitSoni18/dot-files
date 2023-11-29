@@ -7,11 +7,19 @@ command = "typescript-language-server"
 args = ["--stdio"]
 
 [language-server.vscode-html-languageserver]
-command = "typescript-language-server"
+command = "vscode-html-languageserver"
 args = ["--stdio"]
 
 [language-server.marksman]
 command = "marksman"
+
+[language-server.tailwindcss-language-server]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
 
 [[language]]
 name = "rust"
@@ -27,49 +35,46 @@ formatter = { command = "cargo fmt" }
 
 [[language]]
 name = "javascript"
-injection-regex = "html"
-file-types = ["js"]
+file-types = ["js", "cjs", "mjs"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server" , "tailwindcss-language-server", "emmet-ls" ]
 indent = { tab-width = 4, unit = "\t" }
-formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
 
 [[language]]
 name = "typescript"
-injection-regex = "html"
 file-types = ["ts"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server", "tailwindcss-language-server", "emmet-ls" ]
 indent = { tab-width = 4, unit = "\t" }
-formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
 
 [[language]]
 name = "jsx"
-injection-regex = "html"
 file-types = ["jsx"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server", "tailwindcss-language-server", "emmet-ls" ]
 indent = { tab-width = 4, unit = "\t" }
-formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
 
 [[language]]
 name = "tsx"
-injection-regex = "html"
-file-types = ["ts"]
+file-types = ["tsx"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server", "tailwindcss-language-server", "emmet-ls" ]
 indent = { tab-width = 4, unit = "\t" }
-formatter = { command = "npx prettier", args = ["--write --use-tabs"] }
+formatter = { command = "prettier", args = ["--write", "--parser", "typescript"] }
 
 [[language]]
 name = "html"
+injection-regex = "javascript"
 file-types = ["html", "htm"]
 comment-token = "<!-- -->"
-language-servers = [ "vscode-html-languageserver" ]
+language-servers = [ "vscode-html-languageserver", "emmet-ls", "tailwindcss-language-server" ]
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]

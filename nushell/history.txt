@@ -1,331 +1,216 @@
+rm history.txt
+hx config.nu
+sudo reboot
+Hyprland 
+cat .bashrc
+echo $nu.config-path
+$nu.config-path | hx
+echo $nu.config-path | hx
+echo $nu.config-path | wl-copy 
+echo $nu.config-path 
+hx .config/nushell/config.nu
 clear
-hx /home/jimit/.config/nushell/env.nu
-hx
-helix /home/jimit/.config/nushell/env.nu
+hx .config/nushell/config.nu
 clear
-helix /home/jimit/.config/nushell/env.nu
-hx
-clear
-pacman -R helix
-yay -R helix
-sudo pacman -R helix
-yay -S helix
-paru -S helix
-pacman -S helix
-sudo pacman -S helix
-paru -S helix
-sudo pacman -S helix
-hx
-helix /home/jimit/.config/nushell/env.nu
-clear
-time bash
-clear
-ls
-cd Programming/Languages/Rust/
-ls
-cd async_await/
-clear
-hx .
-helix .
-clear
-hyprpicker
-yay -R hyprpicker
-paru -R hyprpicker
-paru -R hyprpicker-git
-paru -S hyprpicker-git
-hyprpicker
-cd ~/.config/
-cd helix/
-hx .
-helix .
-ls
-ls -la
-mkdir themes
-cd themes
-hx .
-helix .
-hyprpicker 
-helix onedark_fix.toml
-cd ~/.config/helix/
-hx .
-helix /
-hx .
-helix .
-echo $TERM
-echo $env.TERM
-echo $env.PWD
-echo PWD
-echo $PWD
-helix .
-cd Programming/Languages/Rust/
-helix .
-cd async_await/
-hx .
-helix .
+cat .bashrc
+hx .config/nushell/config.nu
 zellij 
-helix .
-clear
-zellij 
-clear
-zellij list-sessions
-clear
-zellij list-sessions
-cd ~/.config/
-ls
-mkdir wezterm
-cd wezterm/
-helix wezterm.lua
-clear
-zellij 
-helix .config/wezterm/wezterm.lua
-cd Programming/Languages/Rust/async_await/
-cd ~/.config/helix/
-hx .
-helix /
-helix .
-cargo check
-helix .
-clear
-cd src/
-ls
-touch lib.rs
-cd .
-cd ..
-helix .
-cd ~/.config/wezterm/
-helix .
-clear
-compgen
-clear
-fzf
-compgen
-htop
-clear
-zellij 
+pkill Hyprland
 bash
-compgen
+source .config/nushell/config.nu
+hx .config/nushell/config.nu
 clear
-sudo pacman -Syu
-paru
-repo
-clear
-which hx
-clear
-cd Programming/Languages/Rust/async_await/
-hx .
-helix .
-clear
-hx .
-cd ~/.config/helix/
-hx .
-helix .
-helix .
-zellij 
-cd ~/.config/helix/
-cd Programming/Languages/Rust/async_await/
-helix .
-helix .
-cd ~/.config/helix/
-helix .
-cd Programming/Languages/Rust/
-cargo new --lib timer_future
-cd timer_future/
-hx .
-clear
-cd ..
+cd .config/nushell/
 ls
-cd Projects/
-ls
-helix .
-git clone https://github.com/JimitSoni18/helix.git
-cd helix/
-cd ~/.config/helix/
-helix .
-helix .
-rustc -v
-rustc
-clear
-rustc --version
-ls
-cd ..
-rustc --version
-cd helix/
-rustup component add rust-analyzer
-which rust-analyzer
-rust-analyzer --version
-cd ..
-rust-analyzer --version
-cd helix/
-helix .
-cargo check
-killall rust-analyzer
-killall rustc
-killall cargo
-helix .
-which rust-analyzer
-rust-analyzer --version
-rustup component removerust-analyzer
-rustup component remove rust-analyzer
-rustup component add rust-analyzer
-helix .
-rust-analyzer 
-cargo c
-clear
-helix .
-killall rust-analyzer
-helix .
-helix .
-cd ~/Programming/Projects/helix/
-clear
-cd .librewolf/xt99uing.default-default/
-ls
-cd chrome/
-ls
-hxx
-helix /
-helix .
-cd ..
-ls
-cp -r chrome ../uiq1c6r6.default/
-cd ../uiq1c6r6.default/
-ls
-cd chrome/
-la
-ls
-cd ..
-cd ../..
-clear
-sudo pacman -S git-delta
-cd Programming/Languages/Rust/async_await/
-git difftool --tool-help
-delta
+hx env.nu
+cat .bashrc
 cd ~
-helix .gitconfig
-cd Programming/Languages/Rust/async_await/
-ls
-git diff
-git add .
-git diff
-git diff --staged
+cat .bashrc
+cat .bashrc 
+zellij 
 clear
-delta
-git difftool --tool-help
-helix ~/.gitconfig
-git diff
-git diff --staged
+sudo reboot
+clear
+cd Programming/Languages/Rust/axum_server/
+starship init nu | save -f ~/.cache/starship/init.nu
+ls ~/.cache/starship/init.nu
+cd ~/.config/nushell/
+ls
+hx env.nu
+hx config.nu
+cd Programming/Languages/Rust/axum_server/
+clear
+hx .
+which rust-analyzer
+rustup component add rust-analyzer
+cd ~
+cat .bashrc 
+cat .bash_profile
+clear
+clear
+which rust-analyzer
+cd ~
+ls
+cat .bash_profile
+rustup
+clear
+bash
+clear
+cat .bash_profile
+cd ~
+clear
+cat .bash_profile
+bash --help
+$env
+hx .config/nushell/env.nu
+clear
+source .config/nushell/env.nu
+rustup
+source .config/nushell/config.nu
+rustup
+cat ~/.cargo/env
+cat .bash_profile
+cat .bashrc
+rm -rf ~/.cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source .cargo/env
+rustup
+cargo
+rustc
+cd ~
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+clear
+cd .config/nushell/
+hx .
+source config.nu
+source env.nu
+cd ~
+clear
+cargo
+clear
+ls .cargo/bin/
+clear
+cd .config/nushell/
+echo $nu.env-path
+echo $env.PATH
+hx .
+cd ~
+source $nu.env-path
+clear
+cargo
+echo $env.PATH
+hx .config/nushell/env.nu
+source $nu.env-path
+cargo
+echo $env.PATH
+hx .config/nushell/env.nu
+source $nu.env-path
+cargo
+cd Programming/Languages/Rust/axum_server/
+clear
+cargo watch -c -q -w src -x run
+rustup
+echo $env.PATH
+hx .config/nushell/env.nu
+cd ~
+echo $nu.home-path
+hx .config/nushell/env.nu
+source $nu.env-path
+echo $env.PATH
+cd ~
+source $nu.env-path
+echo $env.PATH
+source $nu.env-path
+echo $env.PATH
+hx .config/nushell/env.nu
+cargo run
+bash
+cd ~
+$env.HOME
+$env.HYPRLAND_CMD
+hx .config/nushell/env.nu
+bash
+hx .
+cd Programming/Languages/Rust/axum_server/
+echo $env.PATH
+clear
+cargo watch -q -c -w src -x run
+cargo install cargo-watch
+cargo watch
+curl --help
+cat ~/.bash_history
 clea
 clear
-git show
-htop
+curl -H 'Content-Type: application/json' -d '{"username": "jimit", "password": "asbnjs"}' -X POST http://127.0.0.1:8080/api/login -v
+curl -H 'Content-Type: application/json' -d '{"username": "jimit", "password": "bnjs"}' -X POST http://127.0.0.1:8080/api/login -v
+nvim .
+vim
 clear
-cd ../../../Projects/ 
-cd helix/
-clear
-helix /
-helix .
-cd ~
-mkdir gate_prep
-cd gate_prep/
-helix subjects
-ls
-clear
-helix subjects.md
-helix --health markdown
-cd ~/Documents/
-ls
-./marksman-linux-x64
-mv marksman-linux-x64q marksman
-ls
-mv marksman-linux-x64 marksman
-ls
-mv marksman /usr/bin
-cd /usr/bin
-ls 
-cd ~/Documents/
-ls
-markdown_py 
-clear
-mv marksman /usr/bin/
-sudo mv marksman /usr/bin/
-marksman
-clear
-cd ~
-marks
-marksman
-chmod +x /usr/bin/marksman
-marksman
-clear
-cd .config/helix/
+vo
+vi
 hx .
-helix .
-cargo component add rustfmt
-rustup component add rustfmt
+rustup default stable
+clear
+cargo watch -q -c -w src -x run
 hx .
-helix .
-cd ~/gate_prep/
-hx .
-sudo pacman -S wofi
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket AAA"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl "http://127.0.0.1:8080/api/tickets" -v
+curl -H 'Content-Type: application/json' -X DELETE http://127.0.0.1:8080/api/tickets/1 -v
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket BBB"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket CCC"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -X DELETE http://127.0.0.1:8080/api/tickets/1 -v
+curl -H 'Content-Type: application/json' http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -X DELETE http://127.0.0.1:8080/api/tickets/1 -v
+curl http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket AAA"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket BBB"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' -d '{"title":"Ticket CCC"}' -X POST http://127.0.0.1:8080/api/tickets -v
+curl -H 'Content-Type: application/json' http://127.0.0.1:8080/api/tickets -v
 cd ~
-clear
-wofi
-wofi -d
-wofi -S
-wofi -S drun
-cd .config/hypr/
 ls
-helix hyprpaper.conf
-helix hyprland.conf
-clear
-gvfs-mtp
-clear
-pacman -Q
-sudo pacman -S gvfs-mtp
-clear
-pacman -Q
-clear
-lsusb
-gio
-clear
-cd .config/
-git status
-ls Kitware/
-cat Kitware/CMakeSetup.conf
-git status
-git add JetBrainsMono-2.304 eww wezterm helix
-git status
-git add dconf/user hypr nushell xfce4
-git statui
-git status
-git add nushell
-git status
-git add nushell/history.txtq
-git add nushell/history.txt
-git status
-git add .
-git status
-git restore Kitware/
-git status
-cd nushell/
-ls
-cat history.txt
-clear
-git status
-git restore Kitware/
-git status
-git restore Kitware/*
-git status
-git restore --staged Kitware/
-git restore --staged Kitware
-git restore --staged Kitware/*
-git restore --staged .Kitware/*
-git status
-ls
+cd eww
+git branch
+git pull
+cd ~/.config/nushell/
+hx config.nu
+hx env.nu
+rustup update
+rustup default nightly
 cd ..
-git restore --staged .Kitware/*
-git status
-git restore --staged .Kitware/
-git restore --staged Kitware/
-git status
-git restore --staged nushell/history.txt
-git status
+rustc -v
+rustc --version
+cd eww/
+rustc --version
+sudo xbps-install -Su
+rustup default nightly
+cargo build --release --no-default-features --features=wayland
 clear
+ls /usr/lib
+clear
+cargo build --release --no-default-features --features=wayland
+sudo xbps-install gtk-layer-shell-devel
+find / -name gtk-layer
+which findf
+which find
+clear
+find --help
+htop
+bash
+/usr/bin/find
+ip
+ip a
+sudo xbps-install inetutils
+ifconfig 
+cd ../../JS/portfolio/
+npm run dev
+npm run dev -host
+npm run dev
+cd ~/.config/hypr/
+hx hyprland.conf
+hx .
+cargo watch -q -c -w src -x run
+clear
+cd ~/.config/
+git status
+git commit helix/ hypr/ nushell/

@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "catppuccin_frappe"
 
 [editor]
 line-number = "relative"
@@ -43,9 +43,6 @@ separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-
-[editor.lsp]
-display-inlay-hints = true
 
 [keys.normal]
 i = ["collapse_selection", "insert_mode"]

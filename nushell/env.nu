@@ -68,6 +68,9 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
+$env.XDG_RUNTIME_DIR = '/tmp'
+$env.QT_QPA_PLATFORM = 'wayland'
+
 # Directories to search for scripts when calling source or use
 $env.NU_LIB_DIRS = [
     # ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
@@ -80,3 +83,9 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+$env.PATH = ($env.PATH | split row (char esep) | prepend $"($env.HOME)/.cargo/bin")
+
+# starship startup
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
+
