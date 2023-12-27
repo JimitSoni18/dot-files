@@ -78,7 +78,20 @@ language-servers = [ "vscode-html-languageserver", "emmet-ls", "tailwindcss-lang
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
+name = "css"
+file-types = ["css", "scss", "sass", "less"]
+comment-token = "/* */"
+language-servers = [ "vscode-css-language-server", "tailwindcss-language-server" ]
+formatter = { command = "prettier", args = ["--write", "--parser", "css"] }
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
 name = "markdown"
 file-types = ["md"]
 language-servers = [ "marksman" ]
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "yuck"
+file-types = ["yuck"]
 indent = { tab-width = 4, unit = "\t" }

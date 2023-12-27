@@ -9,6 +9,6 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.color_scheme = 'Bespin (base16)'
+config.color_scheme = 'Catppuccin Frappe'
 
 return config

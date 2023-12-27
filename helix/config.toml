@@ -1,4 +1,4 @@
-theme = "catppuccin_frappe"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
@@ -51,6 +51,11 @@ D = ["collapse_selection", "kill_to_line_end"]
 G = ["goto_last_line"]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
+C-n = "goto_next_buffer"
+C-p = "goto_previous_buffer"
+
+[keys.normal.space]
+H = ":toggle lsp.display-inlay-hints"
 
 [keys.select]
 i = ["collapse_selection", "insert_mode"]

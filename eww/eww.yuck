@@ -1,0 +1,76 @@
+;; date vars
+(defpoll number_day :interval "1h"  "date \"+%d\"")
+(defpoll month :interval "10h"  "date \"+%b\"")
+(defpoll min :interval "10s"  "date \"+%M\"")
+(defpoll hour :interval "10s"  "date \"+%H\"")
+(defpoll day :interval "1h"  "date \"+%A\" ")
+(defpoll year_full :interval "15h"  "date \"+%Y\"")
+(defpoll current_workspace :interval "1s" "hyprctl activewindow | grep \"workspace: \" | cut -d' ' -f2")
+
+(defvar show_volume false)
+
+(defvar workspaces "[1, 2, 3, 4, 5]")
+
+(defwidget workspace_switcher []
+	(box :orientation "h"
+		 :hexpand false
+		 :vexpand false
+		 :halign "start"
+		 (for workspace in workspaces
+		 (button :class "${current_workspace == workspace ? "current" : ""}":onclick "hyprctl dispatch workspace ${workspace}" {workspace}))))
+
+(defwidget smol_calendar [] 
+	(box :orientation "v" :class "date-day"
+		(box :orientation "h"
+			(box :class "month" "${month}")
+			(box :class "number_day" "${number_day}")
+			(box :class "year_full" {year_full}))
+			(box :class "day" {day})))
+
+(defwidget time_and_date []
+	(box :orientation "h"
+		 :space-evenly false
+		 :halign "center"
+		 (smol_calendar)
+		 (time_side)))
+
+(defwidget time_side [] 
+		(box :orientation "h" :class "time-side" 
+			(box :class "hour-side" "${hour}")
+			{":"}
+			(box :class "minute-side" {min})))
+
+(defwindow bar
+		:monitor 0
+		:geometry (geometry :x "0%"
+							:y "0%"
+							:width "100%"
+							:height "30px"
+							:anchor "bottom center")
+		:stacking "fg"
+		:exclusive true
+		(centerbox
+			 :vexpand true
+			 :orientation "h"
+			 :class "bar"
+				(workspace_switcher :hexpand false)
+				(time_and_date)
+				(hyprutils)))
+
+(defwidget hyprutils []
+	(box :hexpand false :halign "end"
+		(button :onclick "sleep 0.1 && grimblast copysave area"
+			(image :path "./icons/screenshot_region.svg"))
+		(button :onclick "sleep 0.1 && grimblast copysave output"
+			(image :path "./icons/screenshot_monitor.svg"))
+		(button :hexpand false :onclick "sleep 0.1 && hyprpicker | wl-copy"
+			(image :path "./icons/eyedropper.svg"))
+		(button :hexpand false :onclick "sleep 0.1 && sudo wlogout" "⏻")))
+
+
+; (defwidget hidden_slider [name, visible, ?icon]
+; 		(eventbox 
+; 		:onhover "eww update ${name}=true"
+; 				  :onhoverlost "eww update ${name}=false"
+; 				  :class "hidden_slider ${visible ? "visible" : ""}"
+; 				))
