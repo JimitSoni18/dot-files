@@ -11,3 +11,29 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
+
+[io/github/celluloid-player/celluloid/window-state]
+loop-playlist=false
+maximized=false
+volume=1.0
+show-playlist=false
+width=1024
+height=576
+playlist-width=250
+
+[org/gtk/gtk4/settings/file-chooser]
+window-size=(825, 372)
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=140
+sort-column='name'
+sort-directories-first=true
+sort-order='ascending'
+type-format='category'
+view-type='list'
+
+[org/gtk/settings/color-chooser]
+selected-color=(true, 0.0, 0.0, 0.0, 1.0)
