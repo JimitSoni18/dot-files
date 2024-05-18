@@ -1,0 +1,37 @@
+button {
+  all: unset;
+  padding: 5px 10px;
+  border: 1px solid #1E1E2E;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: #313244;
+  color: #CAA5F5;
+}
+.current {
+  color: #D9926D;
+  background-color: #3E4254;
+}
+
+.bar {
+  background-color: #11111B;
+  color: #86B0F4;
+}
+
+scale {
+  min-height: 80px;
+}
+
+scale trough highlight {
+    min-width: 5px;
+}
+
+scale trough {
+    all: unset;
+    background-color: orange;
+    border-radius: 15px;
+}
+scale highlight {
+    all: unset;
+    background-color: green;
+    border-radius: 12px;
+}

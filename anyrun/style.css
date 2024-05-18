@@ -1,0 +1,22 @@
+#entry {
+  background-color: #312418;
+  border: 0px solid rgba(255,255,255,0.15);
+  box-shadow; 0;
+  outline: none;
+  /* border-radius: 16px; */
+}
+
+#main {
+  background-color: alpha(@theme_bg_color,0.3);
+  border: 0px solid rgba(255,255,255,0.15);
+  outline: none;
+  /* border-radius: 16px; */
+}
+
+#plugin {
+  background-color: transparent;
+}
+
+#window {
+  background: none;
+}
