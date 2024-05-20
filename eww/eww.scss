@@ -1,12 +1,20 @@
 button {
   all: unset;
-  padding: 5px 10px;
+  padding: 5px;
   border: 1px solid #1E1E2E;
-  margin: 0 5px;
   border-radius: 5px;
   background-color: #313244;
   color: #CAA5F5;
+
+  &:hover {
+    background-color: white;
+  }
 }
+
+.date_time {
+  font-size: 12px;
+}
+
 .current {
   color: #D9926D;
   background-color: #3E4254;
@@ -27,11 +35,21 @@ scale trough highlight {
 
 scale trough {
     all: unset;
-    background-color: orange;
+    background-color: violet;
     border-radius: 15px;
+    padding: 0.2rem;
 }
+
 scale highlight {
     all: unset;
-    background-color: green;
-    border-radius: 12px;
+    background-color: rebeccapurple;
+    border-radius: 15px;
+    padding: 0.1rem;
 }
+
+scale slider {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+

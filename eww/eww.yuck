@@ -20,6 +20,7 @@
 
 (defwidget time_and_date []
 	(box :orientation "v"
+		 :class "date_time"
 		 :space-evenly false
 		 :halign "center"
 		 (box :orientation "v" "${today}" "${now}")))
@@ -28,7 +29,7 @@
 		:monitor 0
 		:geometry (geometry :x "0%"
 							:y "0%"
-							:width "20px"
+							:width "15px"
 							:height "100%"
 							:anchor "center left")
 		:stacking "fg"
@@ -44,25 +45,33 @@
 (defwidget controls []
 	(box
 		:orientation "v"
-		(scale
-			:valign "end"
-			:vexpand false
-			:flipped true
-			:value current_volume
-			:min 0
-			:max 100
-			:orientation "v"
-			:onchange "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ {}%")
-		(scale
-			:valign "end"
-			:vexpand false
-			:flipped true
-			:value current_brightness
-			:min 0
-			:max 100
-			:orientation "v"
-			:onchange "brillo -S {}")
-			))
+		:valign "end"
+		:vexpand false
+		(box :orientation "v"
+			 :valign "end"
+			(scale
+				:valign "end"
+				:vexpand false
+				:flipped true
+				:value current_volume
+				:min 0
+				:max 100
+				:orientation "v"
+				:onchange "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ {}%")
+			(image :path "./icons/speaker.svg"))
+		(box :orientation "v"
+			 :valign "end"
+			 :vexpand false
+			(scale
+				:valign "end"
+				:vexpand false
+				:flipped true
+				:value current_brightness
+				:min 0
+				:max 100
+				:orientation "v"
+				:onchange "brillo -S {}")
+			(image :path "./icons/brightness.svg"))))
 
 ; (defwidget hyprutils []
 ; 	(box :hexpand false :halign "end" :orientation "v"

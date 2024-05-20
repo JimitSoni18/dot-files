@@ -5,8 +5,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        -- set by default
-        -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         -- what is this
         -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
@@ -16,9 +14,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
         -- what is this
         -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        -- set by default
-        -- vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-        -- vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     end
 })
 
@@ -35,6 +30,7 @@ return {
         local lsp_config = require("lspconfig")
         lsp_config.rust_analyzer.setup({})
         lsp_config.lua_ls.setup({})
+        lsp_config.gopls.setup({})
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
