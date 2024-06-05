@@ -3,7 +3,7 @@
 (defpoll now :interval "10s" "date +'%H:%M'")
 (defpoll current_workspace :interval "1s" "hyprctl activewindow | grep \"workspace: \" | cut -d' ' -f2")
 (defpoll current_volume :interval "1s" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}'")
-(defpoll current_brightness :interval "1s" "brillo")
+(defpoll current_brightness :interval "1s" "brillo -q")
 
 (defvar show_volume false)
 
@@ -31,7 +31,7 @@
 							:y "0%"
 							:width "15px"
 							:height "100%"
-							:anchor "center left")
+							:anchor "center right")
 		:stacking "fg"
 		:exclusive true
 		(centerbox
@@ -48,7 +48,10 @@
 		:valign "end"
 		:vexpand false
 		(box :orientation "v"
+			 :vexpand false
 			 :valign "end"
+			 :space-evenly false
+			 :class "slider-container"
 			(scale
 				:valign "end"
 				:vexpand false
@@ -58,10 +61,12 @@
 				:max 100
 				:orientation "v"
 				:onchange "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ {}%")
-			(image :path "./icons/speaker.svg"))
+			(image :valign "end" :vexpand false :path "./icons/speaker.svg"))
 		(box :orientation "v"
 			 :valign "end"
 			 :vexpand false
+			 :space-evenly false
+			 :class "slider-container"
 			(scale
 				:valign "end"
 				:vexpand false
@@ -70,8 +75,31 @@
 				:min 0
 				:max 100
 				:orientation "v"
-				:onchange "brillo -S {}")
-			(image :path "./icons/brightness.svg"))))
+				:onchange "brillo -qS {}")
+			(image :valign "end" :vexpand false :path "./icons/brightness.svg")
+			(box :orientation "v"
+				 :valign "end"
+				 :vexpand false
+				 :space-evenly false
+				 {EWW_BATTERY.BAT0.capacity}
+				 (image :path 
+					{EWW_BATTERY.BAT0.capacity > 90
+						? EWW_BATTERY.BAT0.status == "Not charging"
+							? "./icons/battery_not_charging.svg"
+							: EWW_BATTERY.BAT0.status == "Discharging"
+							? "./icons/battery_full_discharging.svg"
+							: "./icons/battery_not_charging.svg"
+						: EWW_BATTERY.BAT0.capacity > 60
+							? EWW_BATTERY.BAT0.status == "Charging"
+								? "./icons/battery_charging_60.svg"
+								: "./icons/battery_discharging_60.svg"
+							: EWW_BATTERY.BAT0.capacity > 40
+								? EWW_BATTERY.BAT0.status == "Charging"
+									? "./icons/battery_charging_40.svg"
+									: "./icons/battery_discharging_40.svg"
+								: EWW_BATTERY.BAT0.status == "Charging"
+									? "./icons/battery_low_charging.svg"
+									: "./icons/battery_low_discharging.svg"})))))
 
 ; (defwidget hyprutils []
 ; 	(box :hexpand false :halign "end" :orientation "v"
