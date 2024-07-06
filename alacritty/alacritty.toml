@@ -1,0 +1,4 @@
+import = ["/home/jimit/.config/alacritty/themes/tokyo-night.toml"]
+
+[font.normal]
+family = "FiraCode Nerd Font"
