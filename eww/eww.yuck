@@ -1,7 +1,9 @@
 ;; date vars
-(defpoll today :interval "10s" "date +'%d/%m'")
-(defpoll now :interval "10s" "date +'%H:%M'")
-(defpoll current_workspace :interval "1s" "hyprctl activewindow | grep \"workspace: \" | cut -d' ' -f2")
+; (defpoll today :interval "10s" "date +'%d/%m'")
+(defpoll today :interval "10s" "date +'%d %b'")
+(defpoll hour :interval "10s" "date +'%H'")
+(defpoll min :interval "10s" "date +'%M'")
+(defpoll current_workspace :interval "0.5s" "hyprctl activewindow | grep \"workspace: \" | cut -d' ' -f2")
 (defpoll current_volume :interval "1s" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}'")
 (defpoll current_brightness :interval "1s" "brillo -q")
 
@@ -20,10 +22,12 @@
 
 (defwidget time_and_date []
 	(box :orientation "v"
-		 :class "date_time"
+		 :class "time"
 		 :space-evenly false
 		 :halign "center"
-		 (box :orientation "v" "${today}" "${now}")))
+		 "${hour}"
+		 "${min}"
+		 (box :class "date" "${today}")))
 
 (defwindow bar
 		:monitor 0
@@ -72,7 +76,7 @@
 				:vexpand false
 				:flipped true
 				:value current_brightness
-				:min 0
+				:min 50
 				:max 100
 				:orientation "v"
 				:onchange "brillo -qS {}")

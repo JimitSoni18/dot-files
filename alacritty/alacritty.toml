@@ -1,0 +1,4 @@
+import = ["/home/jimit/.config/alacritty/themes/themes/one_dark.yaml"]
+
+[font.normal]
+family = "FiraCode Nerd Font"
