@@ -1,4 +1,18 @@
-import = ["/home/jimit/.config/alacritty/themes/tokyo-night.toml"]
+import = [
+	"/home/jimit-dholakiya/.config/alacritty/themes/tokyo-night.toml"
+]
 
 [font.normal]
 family = "FiraCode Nerd Font"
+
+
+[keyboard]
+bindings = [
+	{ key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
+	{ key = "F11", action = "ToggleFullscreen" },
+	{ key = "Enter", mods = "Control", action = "ToggleFullscreen" },
+]
+
+[window]
+opacity = 0.89
+decorations = "None"
