@@ -1,33 +1,30 @@
-;; date vars
-; (defpoll today :interval "10s" "date +'%d/%m'")
-(defpoll today :interval "10s" "date +'%d %b'")
+(defpoll date :interval "10s" "date +'%d %b'")
+(defpoll today :interval "10s" "date +%a")
 (defpoll hour :interval "10s" "date +'%H'")
 (defpoll min :interval "10s" "date +'%M'")
-(defpoll current_workspace :interval "0.5s" "hyprctl activewindow | grep \"workspace: \" | cut -d' ' -f2")
+(defpoll current_workspace :interval "0.5s" "niri msg action get-workspace | grep \"workspace: \" | cut -d' ' -f2")
 (defpoll current_volume :interval "1s" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}'")
 (defpoll current_brightness :interval "1s" "brillo -q")
 
 (defvar show_volume false)
+(defvar show_brightness false)
 
 (defvar workspaces "[1, 2, 3, 4, 5]")
 
 (defwidget workspace_switcher []
 	(box :orientation "v"
-		:hexpand false
-		:vexpand false
 		:valign "start"
 		(for workspace in workspaces
 			(button :class "${current_workspace == workspace ? "current" : ""}"
-				:onclick "hyprctl dispatch workspace ${workspace}" {workspace}))))
+				:onclick "niri msg action focus-workspace ${workspace}" {workspace}))))
 
 (defwidget time_and_date []
 	(box :orientation "v"
 		 :class "time"
-		 :space-evenly false
-		 :halign "center"
 		 "${hour}"
 		 "${min}"
-		 (box :class "date" "${today}")))
+		 (box :class "date" "${date}")
+		(box :class "today" "${today}")))
 
 (defwindow bar
 		:monitor 0
@@ -37,9 +34,9 @@
 							:height "100%"
 							:anchor "center right")
 		:stacking "fg"
+		:namespace "eww-bar"
 		:exclusive true
 		(centerbox
-			 :vexpand true
 			 :orientation "v"
 			 :class "bar"
 				(workspace_switcher :hexpand false :vexpand false)
@@ -48,77 +45,57 @@
 
 (defwidget controls []
 	(box
-		:orientation "v"
+		:space-evenly false
 		:valign "end"
-		:vexpand false
-		(box :orientation "v"
-			 :vexpand false
-			 :valign "end"
-			 :space-evenly false
-			 :class "slider-container"
-			(scale
-				:valign "end"
-				:vexpand false
-				:flipped true
-				:value current_volume
-				:min 0
-				:max 100
-				:orientation "v"
-				:onchange "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ {}%")
-			(image :valign "end" :vexpand false :path "./icons/speaker.svg"))
-		(box :orientation "v"
-			 :valign "end"
-			 :vexpand false
-			 :space-evenly false
-			 :class "slider-container"
-			(scale
-				:valign "end"
-				:vexpand false
-				:flipped true
-				:value current_brightness
-				:min 50
-				:max 100
-				:orientation "v"
-				:onchange "brillo -qS {}")
-			(image :valign "end" :vexpand false :path "./icons/brightness.svg")
+		:orientation "v"
+		(eventbox :onhover "eww update show_volume=true"
+					:onhoverlost "eww update show_volume=false"
 			(box :orientation "v"
-				 :valign "end"
-				 :vexpand false
 				 :space-evenly false
-				 {EWW_BATTERY.BAT0.capacity}
-				 (image :path 
-					{EWW_BATTERY.BAT0.capacity > 90
-						? EWW_BATTERY.BAT0.status == "Not charging"
-							? "./icons/battery_not_charging.svg"
-							: EWW_BATTERY.BAT0.status == "Discharging"
-							? "./icons/battery_full_discharging.svg"
-							: "./icons/battery_not_charging.svg"
-						: EWW_BATTERY.BAT0.capacity > 60
-							? EWW_BATTERY.BAT0.status == "Charging"
-								? "./icons/battery_charging_60.svg"
-								: "./icons/battery_discharging_60.svg"
-							: EWW_BATTERY.BAT0.capacity > 40
+				 :class "slider-container"
+				(revealer :reveal show_volume
+					:transition "slideup"
+					(scale
+						:flipped true
+						:value current_volume
+						:min 0
+						:max 100
+						:orientation "v"
+						:onchange "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ {}%"))
+					(image :path "./icons/speaker.svg")))
+		(eventbox :onhover "eww update show_brightness=true"
+					:onhoverlost "eww update show_brightness=false"
+				(box :orientation "v"
+					 :space-evenly false
+					 :class "slider-container"
+					(revealer :reveal show_brightness
+					:transition "slideup"
+						(scale
+							:flipped true
+							:value current_brightness
+							:min 50
+							:max 100
+							:orientation "v"
+							:onchange "brillo -qS {}"))
+							(image :path "./icons/brightness.svg")))
+				(box :orientation "v"
+					 (image :path 
+						{EWW_BATTERY.BAT0.capacity > 90
+							? EWW_BATTERY.BAT0.status == "Not charging"
+								? "./icons/battery_not_charging.svg"
+								: EWW_BATTERY.BAT0.status == "Discharging"
+								? "./icons/battery_full_discharging.svg"
+								: "./icons/battery_not_charging.svg"
+							: EWW_BATTERY.BAT0.capacity > 60
 								? EWW_BATTERY.BAT0.status == "Charging"
-									? "./icons/battery_charging_40.svg"
-									: "./icons/battery_discharging_40.svg"
-								: EWW_BATTERY.BAT0.status == "Charging"
-									? "./icons/battery_low_charging.svg"
-									: "./icons/battery_low_discharging.svg"})))))
+									? "./icons/battery_charging_60.svg"
+									: "./icons/battery_discharging_60.svg"
+								: EWW_BATTERY.BAT0.capacity > 40
+									? EWW_BATTERY.BAT0.status == "Charging"
+										? "./icons/battery_charging_40.svg"
+										: "./icons/battery_discharging_40.svg"
+									: EWW_BATTERY.BAT0.status == "Charging"
+										? "./icons/battery_low_charging.svg"
+										: "./icons/battery_low_discharging.svg"})
+										 {EWW_BATTERY.BAT0.capacity})))
 
-; (defwidget hyprutils []
-; 	(box :hexpand false :halign "end" :orientation "v"
-; 		(button :onclick "sleep 0.1 && grimblast copysave area"
-; 			(image :path "./icons/screenshot_region.svg"))
-; 		(button :onclick "sleep 0.1 && grimblast copysave output"
-; 			(image :path "./icons/screenshot_monitor.svg"))
-; 		(button :hexpand false :onclick "sleep 0.1 && hyprpicker | wl-copy"
-; 			(image :path "./icons/eyedropper.svg"))
-; 		(button :hexpand false :onclick "sleep 0.1 && sudo wlogout" "⏻")))
-
-
-; (defwidget hidden_slider [name, visible, ?icon]
-; 		(eventbox 
-; 		:onhover "eww update ${name}=true"
-; 				  :onhoverlost "eww update ${name}=false"
-; 				  :class "hidden_slider ${visible ? "visible" : ""}"
-; 				))

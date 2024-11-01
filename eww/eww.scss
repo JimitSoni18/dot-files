@@ -3,8 +3,8 @@ button {
   padding: 5px;
   border: 1px solid #1E1E2E;
   border-radius: 5px;
-  color: #313244;
-  background-color: #CAA5F5;
+  color: #D9926D;
+  background-color: #3E4254;
 
   &:hover {
     background-color: white;
@@ -12,16 +12,20 @@ button {
 }
 
 .time {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .date {
   font-size: 12px;
 }
 
+.today {
+  font-size: 12px;
+}
+
 .current {
-  color: #D9926D;
-  background-color: #3E4254;
+  color: #313244;
+  background-color: #CAA5F5;
 }
 
 .bar {
