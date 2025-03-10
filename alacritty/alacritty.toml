@@ -1,4 +1,19 @@
-import = ["/home/jimit/.config/alacritty/themes/themes/one_dark.yaml"]
 
 [font.normal]
 family = "FiraCode Nerd Font"
+
+
+[keyboard]
+bindings = [
+	{ key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
+	{ key = "F11", action = "ToggleFullscreen" },
+	{ key = "Enter", mods = "Control", action = "ToggleFullscreen" },
+]
+
+[window]
+opacity = 0.93
+
+[general]
+import = [
+	"/home/jimit/.config/alacritty/themes/one_dark.toml"
+]
