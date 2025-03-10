@@ -1,0 +1,3 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://codeberg.org/JimitSoni18/nvim.git
