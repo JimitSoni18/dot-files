@@ -2,24 +2,17 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# why firefox why
-set -x MOZ_DBUS_REMOTE 1
-set -x MOZ_ENABLE_WAYLAND 1
-set -x GDK_BACKEND wayland
-set -x MOZ_WAYLAND_ENABLED 1
+# zig, nvim, go, go-installs, cargo and cargo-installs, desktop entries, clangd, lapce
+set -x PATH $PATH $HOME/zig $HOME/nvim/bin /usr/local/go/bin $HOME/go/bin $HOME/.cargo/bin $HOME/.local/bin $HOME/clangd/bin $HOME/Lapce
 
-# tmp
-set -x XDG_RUNTIME_DIR /tmp
+# set -x $XDG_RUNTIME_DIR /tmp
 
-# zig bin
-set -x PATH $PATH $HOME/zig $HOME/nvim/bin /usr/local/go/bin $HOME/go/bin $HOME/.cargo/bin
+set --universal nvm_default_version lts
 
-# nvim bin
-# set -x PATH $PATH /home/jimit/nvim/bin
+set -x CARGO_TARGET_DIR $HOME/.cargo-target/
 
-# go bin
-# set -x PATH $PATH /usr/local/go/bin:/home/jimit/go/bin
+starship init fish | source
 
-# set -x PATH $PATH $HOME/.cargo/env"
-
+alias docker podman
+alias docker-compose podman-compose
 
