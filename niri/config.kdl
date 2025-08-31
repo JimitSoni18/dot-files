@@ -29,7 +29,7 @@ input {
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
-        disabled-on-external-mouse
+        // disabled-on-external-mouse
     }
 
     mouse {
@@ -90,7 +90,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 5
+    gaps 0
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -199,8 +199,15 @@ layout {
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "dunst"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "swww img /home/jimit/Pictures/leaves-wallpapers.webp"
+spawn-at-startup "swloop"
 spawn-at-startup "eww" "open" "bar"
+spawn-at-startup "alacritty"
+spawn-at-startup "firefox"
+
+cursor {
+	xcursor-theme "Breeze_Red"
+	xcursor-size 24
+}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -223,7 +230,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 0.6
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -274,7 +281,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T { spawn "alacritty"; }
-    Mod+D { spawn "anyrun"; }
+    Mod+E { spawn "firefox"; }
+    // Mod+D { spawn "anyrun"; }
     // Super+Alt+L { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -372,6 +380,8 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
+    Mod+Alt+WheelScrollDown  cooldown-ms=150 { focus-column-right; }
+    Mod+Alt+WheelScrollUp    cooldown-ms=150 { focus-column-left; }
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
@@ -478,4 +488,3 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
-

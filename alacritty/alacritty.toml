@@ -10,9 +10,9 @@ bindings = [
 ]
 
 [window]
-opacity = 0.89
+opacity = 0.8
 
-[general]
-import = [
-	"/home/jimit/.config/alacritty/themes/one_dark.toml"
-]
+# [general]
+# import = [
+# 	"/home/jimit/.config/alacritty/themes/one_dark.toml"
+# ]
